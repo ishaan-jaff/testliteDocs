@@ -9,7 +9,7 @@ liteLLM simplifies sending your LLM output / exceptions to the following provide
 - Slack Alerts
 
 ### Quick Start
-```
+```python
 
 from litellm import completion_client, embedding
 import os
