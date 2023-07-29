@@ -13,7 +13,7 @@ os.environ['SENTRY_API_URL'] = ""
 os.environ['POSTHOG_API_KEY'], os.environ['POSTHOG_API_URL'] = "api-key", "api-url"
 
 # init liteLLM client
-client = litellm_client(success_callback=["posthog"], failure_callback=["slack", "sentry", "posthog"], verbose=True)
+client = litellm_client(success_callback=["posthog"], failure_callback=["sentry", "posthog"], verbose=True)
 completion = client.completion
 embedding = client.embedding
 
