@@ -1,13 +1,19 @@
 # *🚅 litellm*
-[![](https://dcbadge.vercel.app/api/server/wuPM9dRgDw)](https://discord.gg/wuPM9dRgDw)
+a light 100 line package to simplify calling OpenAI, Azure, Cohere, Anthropic APIs 
 
-a simple & light 100 line package to call OpenAI, Azure, Cohere, Anthropic API Endpoints 
+###### litellm manages:
+* Calling all LLM APIs using the OpenAI format - `completion(model, messages)`
+* Consistent output for all LLM APIs, text responses will always be available at `['choices'][0]['message']['content']`
+* **[Advanced]** Automatically logging your output to Sentry, Posthog, Slack [see liteLLM Client](/docs/advanced.md)
 
-litellm manages:
-- translating inputs to completion and embedding endpoints
-- guarantees consistent output, text responses will always be available at `['choices'][0]['message']['content']`
-# usage
-* Code Sample: [Getting Started Notebook](https://colab.research.google.com/drive/1gR3pY-JzDZahzpVdbGBtrNGDBmzUNJaJ?usp=sharing)
+## Quick Start
+Go directly to code: [Getting Started Notebook](https://colab.research.google.com/drive/1gR3pY-JzDZahzpVdbGBtrNGDBmzUNJaJ?usp=sharing)
+### Installation
+```
+pip install litellm
+```
+
+### Usage
 ```python
 from litellm import completion
 
@@ -22,21 +28,12 @@ response = completion(model="gpt-3.5-turbo", messages=messages)
 
 # cohere call
 response = completion("command-nightly", messages)
-
-# azure openai call
-response = completion("chatgpt-test", messages, azure=True)
 ```
+Need Help / Support : [see troubleshooting](/docs/troubleshoot.md)
 
-# installation
-```
-pip install litellm
-```
+## Why did we build liteLLM 
+- **Need for simplicity**: Our code started to get extremely complicated managing & translating calls between Azure, OpenAI, Cohere
 
-# hosted version
-- [Grab time if you want access 👋](https://calendly.com/d/4mp-gd3-k5k/berriai-1-1-onboarding-litellm-hosted-version)
-
-# why did I build this 
-- **Need for simplicity**: My code started to get extremely complicated managing & translating calls between Azure, OpenAI, Cohere
-
-# Support
-Contact us at ishaan@berri.ai / krrish@berri.ai
+## Support
+* [Meet with us 👋](https://calendly.com/d/4mp-gd3-k5k/berriai-1-1-onboarding-litellm-hosted-version)
+* Contact us at ishaan@berri.ai / krrish@berri.ai
